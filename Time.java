@@ -43,7 +43,7 @@ public class Time {
 
     /**
      *
-     * 涓庢煇涓�澶╃浉宸殑澶╂暟
+     * 与某一天相差的天数
      * @return
      */
     public static int getDate(){
