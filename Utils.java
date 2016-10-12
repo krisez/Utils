@@ -1,7 +1,4 @@
-package com.krisez.m.nofiphone;
-
 import android.content.Context;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -51,17 +48,19 @@ public class Utils {
         void onFinish(String response);
         void onError(Exception e);
     }
-
-    public static String RandomColor(int pos){
-        String color = null;
-        int a = 3;
-        switch (pos%3){
-            case 0:color = "#F03045";break;
-            case 1:color = "#FFECB2";break;
-            case 2:color = "#2877CE";break;
-        }
-
-        return color;
+	//父类的宽度
+	public static int getParentWidth(Context context){
+        WindowManager wm=(WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        wm.getDefaultDisplay().getMetrics(outMetrics);
+        return outMetrics.widthPixels;
+    }
+	//父类的高度
+    public static int getParentHeight(Context context){
+        WindowManager wm=(WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        wm.getDefaultDisplay().getMetrics(outMetrics);
+        return outMetrics.heightPixels;
     }
 
     public static int px2dip(Context context, Float pxVaule){
@@ -72,39 +71,5 @@ public class Utils {
     public static int dip2px(Context context, float dpValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);
-    }
-
-    /**
-     * 对String类型的数据进行修改的新的数据
-     */
-    public static String newString(String Change){
-        char a[] = Change.toCharArray();
-        String result = " ";
-        int j = 0;
-        while (a[j] != '-'){
-            j++;
-        }
-        for(int i = ++j;i < Change.length();i++){
-            if(a[i]==' ')
-                result += '\n';
-            result += a[i];
-        }
-        return result;
-    }
-
-    /**
-     * 得到课程的代码  类似于A0000000000
-     */
-    public static String lessonCode(String all_content){
-        char a[] = all_content.toCharArray();
-        String result = "";
-        int j = 0;
-        while (a[j] != ' '){
-            j++;
-        }
-        for(int i = 0;i < j;i++){
-            result += a[i];
-        }
-        return result;
     }
 }
