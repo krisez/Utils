@@ -48,10 +48,13 @@ public class Time {
      */
     public static int getDate(){
         int monthHave[] = {31,0,31,30,31,30,31,31,30,31,30,31};
-        int allYearDay = 0;
+        int allYearDay = 0;//del????
+		//初始化时间。。。i think should start net time
         int initYear = 2016;
         int initMonth = 9;
         int initDay = 5;
+		//~~~~~~~~
+		//theTime is init day
         int theTime = 0;
         Calendar c = Calendar.getInstance();
         int year = c.get(Calendar.YEAR);
@@ -91,7 +94,6 @@ public class Time {
             }
             theTime += day;
         }
-        System.out.println(allYearDay);
         return theTime;
     }
 }
