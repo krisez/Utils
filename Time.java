@@ -43,13 +43,12 @@ public class Time {
 
     /**
      *
-     * ��ĳһ����������
+     * 与某一天相差的天数
      * @return
      */
     public static int getDate(){
         int monthHave[] = {31,0,31,30,31,30,31,31,30,31,30,31};
-        int allYearDay = 0;//del????
-		//��ʼ��ʱ�䡣����i think should start net time
+		//初始化时间。。。i think should start at net time
         int initYear = 2016;
         int initMonth = 9;
         int initDay = 5;
