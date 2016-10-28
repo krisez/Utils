@@ -10,7 +10,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * Created by ASUS on 2016/3/31.
+ * StratActivity 启动界面
  */
 public class StartActivity extends AppCompatActivity {
     @Override
