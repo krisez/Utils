@@ -1,7 +1,8 @@
 import java.util.Calendar;
 
 /**
- * Created by ASUS on 2016/5/14.
+ * static method about time
+ * 
  */
 public class Time {
     public static String getTime() {
@@ -43,7 +44,7 @@ public class Time {
 
     /**
      *
-     * 与某一天相差的天数
+     * 与当天相差毫秒数
      * @return
      */
     public static int getDate(){
