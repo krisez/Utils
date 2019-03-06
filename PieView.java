@@ -18,14 +18,14 @@ import java.util.List;
 /**
  * Created by ASUS on 2016/8/6.
  */
-public class GetCircleView extends View{
+public class PieView extends View{
     private final static int r = 300;
     private List<CircleData> rate = new ArrayList<>();
     private float start;
     Paint paint = new Paint();
     private double num = 0;
 
-        public GetCircleView(Context context, AttributeSet attrs,List<CircleData> datas) {
+        public PieView(Context context, AttributeSet attrs,List<CircleData> datas) {
         super(context, attrs);
             this.rate = datas;
             for(CircleData i : rate){
