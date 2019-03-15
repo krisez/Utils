@@ -3,9 +3,6 @@
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
-            mUri = data.getData();
-            mVideoView.setVideoURI(mUri);
-            mVideoView.start();
             if (Build.VERSION.SDK_INT >= 19) {
                 handlePathOnKitKat(data);
             } else {
@@ -15,8 +12,7 @@
     }
 
     private void handlePathBeforeKitKat(Intent data) {
-        Uri uri = data.getData();
-        mPath = uri.getPath();
+        mPath = data.getData().getPath();
     }
 
     @TargetApi(19)
